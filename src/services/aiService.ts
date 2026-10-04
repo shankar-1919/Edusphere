@@ -31,7 +31,11 @@ Rules:
 6. Strictly ground your answers to the provided chapter/textbook material. If the requested information is absent or out of scope, politely respond: "I couldn't find this in the uploaded material."`;
 
   private static getStoredApiKey(): string | null {
-    return localStorage.getItem('edusphere_gemini_api_key');
+    const key = localStorage.getItem('edusphere_gemini_api_key');
+    if (key && key.trim()) return key.trim();
+    const envKey = (import.meta as any).env?.VITE_GEMINI_API_KEY;
+    if (envKey && typeof envKey === 'string' && envKey.trim()) return envKey.trim();
+    return null;
   }
 
   /**

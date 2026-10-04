@@ -1,0 +1,8 @@
+{
+  "name": "EduSphere — AI-Powered Study Platform",
+  "description": "Turn your textbooks and PDFs into summaries, flashcards, quizzes, and practice exams with AI.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
